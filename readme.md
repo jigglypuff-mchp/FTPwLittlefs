@@ -33,7 +33,7 @@ The application uses littlefs-FS over FTP server to store files on SST26 SPI fla
 </p>
 <p align="center"><img src="images/FTPServer_Config.png" width="350" height="270"/> <img src="images/fileSystem_Config.png" width="350" height="270"/>
 </p>
-<p align="center"><img src="images/memoryDrvInst0_Config.png" width="430" height="260"/> <img src="images/SST26Drv_Config.png" width="420" height="280"/>
+<p align="center"><img src="images/memoryDrvInst0_Config.png" width="410" height="260"/> <img src="images/SST26Drv_Config.png" width="400" height="280"/>
 </p>
 <p align="center"><img src="images/spi1Config.png" width="590" height="290"/> <img src="images/wifiservice_Config.png" width="440" height="300"/>
 </p>
