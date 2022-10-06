@@ -17,7 +17,7 @@ The [WFI32-IoT board](https://ww1.microchip.com/downloads/aemDocuments/documents
 
 - MHC is launched by selecting **Tools \> Embedded \> MPLAB® Harmony 3 Configurator** from the MPLAB X IDE. 
 The list of MHC components used in this application is as below:
-<p align="center"><img width="300" src="images/activeComponentsList.png">
+<p align="center"><img width="450" src="images/activeComponentsList.png">
 </p>
 
 - The following 'Project Graph' diagrams show the linking in between MHC components used in the application.
