@@ -26,7 +26,7 @@ The list of MHC components used in this application is as below:
     - System Configuration Project Graph:
 
 The application uses littlefs-FS over FTP server to store files on SST26 SPI flash memory using Memory driver instance 0, SST26 driver, and SPI peripheral library module as shown in the Root project graph.
-<p align="center"><img src="images/root_projectGraph.png" width="450" height="250"/> <img src="images/systemConfiguration_projectGraph.png" width="450" height="250"/>
+<p align="center"><img src="images/root_projectGraph.png" width="550" height="300"/> <img src="images/systemConfiguration_projectGraph.png" width="550" height="300"/>
 </p>
 
 - MHC configurations for the modules used in this project are as shown below:
