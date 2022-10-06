@@ -73,7 +73,7 @@ The application uses littlefs-FS over FTP server to store files on SST26 SPI fla
 <p align="center"><img width="500" src="images/appSourcefile.png">
 </p>
 
-4. For the subsequent power-ups of the device with the same application, please make following changes in the src/app.c file to retain server hosted files from earlier app execution
+4. For the subsequent power-ups of the device with the same application, please make following changes in the src/app.c file to retain server hosted files from earlier execution of the app
 
 <p align="center"><img width="500" src="images/app_c_nextBoot.png">
 </p>
