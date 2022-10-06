@@ -29,17 +29,18 @@ The application uses littlefs-FS over FTP server to store files on SST26 SPI fla
 
 <p align="center"><img src="images/root_projectGraph.png" width="600"> 
 </p>
-
-<p align="center"><img src="images/systemConfiguration_projectGraph.png" width="600">
+<p align="center"><img src="images/systemConfiguration_projectGraph.png" width="800">
 </p>
 
 - MHC configurations for the modules used in this project are as shown below:
 </p>
-<p align="center"><img src="images/FTPServer_Config.png" width="350" height="270"/> <img src="images/fileSystem_Config.png" width="350" height="270"/>
+<p align="center"><img src="images/FTPServer_Config.png" width="400"> <img src="images/fileSystem_Config.png" width="400">
 </p>
 <p align="center"><img src="images/memoryDrvInst0_Config.png" width="410" height="260"/> <img src="images/SST26Drv_Config.png" width="400" height="280"/>
 </p>
-<p align="center"><img src="images/spi1Config.png" width="590" height="290"/> <img src="images/wifiservice_Config.png" width="440" height="300"/>
+<p align="center"><img src="images/spi1Config.png" width="590">
+</p>
+<p align="center"><img src="images/wifiservice_Config.png" width="500">
 </p>
 
 ### Setting up WFI32-IoT board
@@ -60,11 +61,11 @@ The application uses littlefs-FS over FTP server to store files on SST26 SPI fla
 - Device will boot-up in softAP mode and will display the softAP mode IP address
 - Now, try to connect laptop/phone - the device you will be running FTP client on, with the softAP
 - Once the WiFi station(STA) device is connected to AP, its MAC and IP address will be displayed on the terminal app as below:
-<p align="center"><img width="500" src="images/ftpServerlogs.png">
+<p align="center"><img width="600" src="images/ftpServerlogs.png">
 </p>
 
 - Establish the FTP server-client connection and verify basic FTP commands such as put, get, mkdir, rmdir, delete, ls, cd, pwd as below:
-<p align="center"><img width="550" src="images/ftpClientLogs.png">
+<p align="center"><img width="650" src="images/ftpClientLogs.png">
 </p>
 
 ### Note/Known issues:
