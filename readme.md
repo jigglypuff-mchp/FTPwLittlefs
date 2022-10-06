@@ -2,7 +2,7 @@
 
 ## Introduction
 This MPLAB Harmony application demonstrates FTP server using littlefs file system - [A little fail-safe file system](https://github.com/littlefs-project/littlefs).
-The [WFI32-IoT board](https://ww1.microchip.com/downloads/aemDocuments/documents/WSG/ProductDocuments/UserGuides/EV36W50A-WFI32-IoT-Board-Users-Guide-DS50003262.pdf) will boot-up in SoftAP mode, with an AP name 'DEMO_AP_SOFTAP' and will host the FTP Server. This application uses SST26 memory module available on the WFI32-IoT board, as SPI Flash. The FTP server stores files on the SST26 memory, using littlefs and FTP client will read from and write to this memory using littlefs.
+The [WFI32-IoT board](https://ww1.microchip.com/downloads/aemDocuments/documents/WSG/ProductDocuments/UserGuides/EV36W50A-WFI32-IoT-Board-Users-Guide-DS50003262.pdf) will boot-up in SoftAP mode, with an AP name 'DEMO_AP_SOFTAP' and will host the FTP Server. This application uses SST26 memory module available on the WFI32-IoT board as SPI Flash. The FTP server stores files on the SST26 memory using littlefs and FTP client will read from and write to this memory using littlefs.
 
 ### Hardware Requirements
 - [WFI32-IoT board](https://www.microchip.com/en-us/development-tool/EV36W50A)
@@ -17,7 +17,7 @@ The [WFI32-IoT board](https://ww1.microchip.com/downloads/aemDocuments/documents
 
 - MHC is launched by selecting **Tools \> Embedded \> MPLAB® Harmony 3 Configurator** from the MPLAB X IDE. 
 The list of MHC components used in this application is as below:
-<p align="center"><img width="300" src="images/activeComponentsList.png">
+<p align="center"><img width="450" src="images/activeComponentsList.png">
 </p>
 
 - The following 'Project Graph' diagrams show the linking in between MHC components used in the application.
@@ -26,16 +26,25 @@ The list of MHC components used in this application is as below:
     - System Configuration Project Graph:
 
 The application uses littlefs-FS over FTP server to store files on SST26 SPI flash memory using Memory driver instance 0, SST26 driver, and SPI peripheral library module as shown in the Root project graph.
-<p align="center"><img src="images/root_projectGraph.png" width="300" height="150"/> <img src="images/systemConfiguration_projectGraph.png" width="300" height="150"/>
+
+<p align="center"><img src="images/root_projectGraph.png" width="600"> 
+</p>
+<p align="center"><img src="images/systemConfiguration_projectGraph.png" width="800">
 </p>
 
-- MHC configurations for the modules used in this project are as shown below:
+- MHC configurations for the modules used in this project are as below:
 </p>
-<p align="center"><img src="images/FTPServer_Config.png" width="350" height="270"/> <img src="images/fileSystem_Config.png" width="350" height="270"/>
+<p align="center"><img src="images/FTPServer_Config.png" width="600"> 
 </p>
-<p align="center"><img src="images/memoryDrvInst0_Config.png" width="410" height="260"/> <img src="images/SST26Drv_Config.png" width="400" height="280"/>
+<p align="center"><img src="images/fileSystem_Config.png" width="550">
 </p>
-<p align="center"><img src="images/spi1Config.png" width="590" height="290"/> <img src="images/wifiservice_Config.png" width="440" height="300"/>
+<p align="center"><img src="images/memoryDrvInst0_Config.png" width="650">
+</p>
+<p align="center"><img src="images/SST26Drv_Config.png" width="600">
+</p>
+<p align="center"><img src="images/spi1Config.png" width="650">
+</p>
+<p align="center"><img src="images/wifiservice_Config.png" width="500">
 </p>
 
 ### Setting up WFI32-IoT board
@@ -56,11 +65,11 @@ The application uses littlefs-FS over FTP server to store files on SST26 SPI fla
 - Device will boot-up in softAP mode and will display the softAP mode IP address
 - Now, try to connect laptop/phone - the device you will be running FTP client on, with the softAP
 - Once the WiFi station(STA) device is connected to AP, its MAC and IP address will be displayed on the terminal app as below:
-<p align="center"><img width="500" src="images/ftpServerlogs.png">
+<p align="center"><img width="600" src="images/ftpServerlogs.png">
 </p>
 
 - Establish the FTP server-client connection and verify basic FTP commands such as put, get, mkdir, rmdir, delete, ls, cd, pwd as below:
-<p align="center"><img width="550" src="images/ftpClientLogs.png">
+<p align="center"><img width="650" src="images/FTPclient.png">
 </p>
 
 ### Note/Known issues:
@@ -70,11 +79,11 @@ The application uses littlefs-FS over FTP server to store files on SST26 SPI fla
    - bool authRes = true;
 3. While programming the WFI32-IoT board with this application for the first time, please check if the following code from src/app.c is in place:
    
-<p align="center"><img width="500" src="images/appSourcefile.png">
+<p align="center"><img width="600" src="images/appSourcefile.png">
 </p>
 
-4. For the subsequent power-ups of the device with the same application, please make following changes in the src/app.c file to retain server hosted files from earlier app execution
+4. For the subsequent power-ups of the device with the same application, please make following changes in the src/app.c file to retain server hosted files from earlier execution of the app
 
-<p align="center"><img width="500" src="images/app_c_nextBoot.png">
+<p align="center"><img width="600" src="images/app_c_nextBoot.png">
 </p>
 
