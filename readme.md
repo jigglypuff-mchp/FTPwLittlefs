@@ -13,7 +13,7 @@ The [WFI32-IoT board](https://ww1.microchip.com/downloads/aemDocuments/documents
 - [MPLAB Harmony 3](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/mplab-harmony-v3)
 	- Note: The project was developed and tested using the MPLAB X v6.00, MPLAB XC32 v3.01.
 
-### MHC Configuration for the application
+### Application configuration with MHC 
 
 - MHC is launched by selecting **Tools \> Embedded \> MPLAB® Harmony 3 Configurator** from the MPLAB X IDE. 
 The list of MHC components used in this application is as below:
@@ -32,7 +32,7 @@ The application uses littlefs-FS over FTP server to store files on SST26 SPI fla
 <p align="center"><img src="images/systemConfiguration_projectGraph.png" width="800">
 </p>
 
-- MHC configurations for the modules used in this project are as below:
+- Configuration options for the components used in the project are as below:
 </p>
 <p align="center"><img src="images/FTPServer_Config.png" width="600"> 
 </p>
@@ -42,7 +42,7 @@ The application uses littlefs-FS over FTP server to store files on SST26 SPI fla
 </p>
 <p align="center"><img src="images/SST26Drv_Config.png" width="600">
 </p>
-<p align="center"><img src="images/spi1Config.png" width="650">
+<p align="center"><img src="images/spi1Config.png" width="700" height="270">
 </p>
 <p align="center"><img src="images/wifiservice_Config.png" width="500">
 </p>
@@ -68,8 +68,8 @@ The application uses littlefs-FS over FTP server to store files on SST26 SPI fla
 <p align="center"><img width="600" src="images/ftpServerlogs.png">
 </p>
 
-- Establish the FTP server-client connection and verify basic FTP commands such as put, get, mkdir, rmdir, delete, ls, cd, pwd as below:
-<p align="center"><img width="650" src="images/FTPclient.png">
+- Establish FTP server-client connection and verify basic FTP commands such as put, get, mkdir, rmdir, delete, ls, cd, pwd as below:
+<p align="center"><img width="500" src="images/FTPclient.png">
 </p>
 
 ### Note/Known issues:
@@ -77,13 +77,13 @@ The application uses littlefs-FS over FTP server to store files on SST26 SPI fla
    - #pragma config HSSPIEN = ON
 2. As of now, there's no user authentication method set. So, any FTP client can access the files hosted by FTP server. Please check if the variable authRes is set to true in firmware/src/config/../library/tcpip/src/ftp.c file
    - bool authRes = true;
-3. While programming the WFI32-IoT board with this application for the first time, please check if the following code from src/app.c is in place:
+3. While programming WFI32-IoT board with this application for the first time, please check if the following code from src/app.c is in place:
    
-<p align="center"><img width="600" src="images/appSourcefile.png">
+<p align="center"><img width="550" src="images/appSourcefile.png">
 </p>
 
 4. For the subsequent power-ups of the device with the same application, please make following changes in the src/app.c file to retain server hosted files from earlier execution of the app
 
-<p align="center"><img width="600" src="images/app_c_nextBoot.png">
+<p align="center"><img width="550" src="images/app_c_nextBoot.png">
 </p>
 
