@@ -153,8 +153,8 @@ SYS_FS_FORMAT_PARAM opt;
             {      
                 /* Mount was successful. Format the disk. */
                 SYS_CONSOLE_PRINT("Mount Success!!\r\n");
-//                  appData.state = APP_FORMAT_DISK;
-                appData.state = APP_STATE_SERVICE_TASKS;
+                  appData.state = APP_FORMAT_DISK;
+//                appData.state = APP_STATE_SERVICE_TASKS;
       
             }
             
