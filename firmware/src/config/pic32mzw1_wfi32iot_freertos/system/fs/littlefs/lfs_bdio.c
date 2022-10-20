@@ -132,7 +132,7 @@ static BDSTATUS disk_read_aligned
 }
 
 BDSTATUS lfs_bdio_initilize (
-    uint8_t pdrv                /* Physical drive nmuber to identify the drive */
+    uint8_t pdrv                /* Physical drive number to identify the drive */
 )
 {
     switch( pdrv ) {

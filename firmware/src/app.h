@@ -64,13 +64,60 @@ typedef enum
     /* Application's state machine's initial state. */
     APP_STATE_INIT=0,
     APP_STATE_SERVICE_TASKS,
-    APP_MOUNT_DISK,                     /* The app mounts the disk */
-    APP_FORMAT_DISK,                   /* The app formats the disk */
-    APP_ERROR,                              /* An app error has occurred */
+    APP_STATE_MOUNT_DISK,                                /* The app mounts the disk */
+    APP_STATE_NVM_Read,                                    /* The app performs NVM read operation and verifies read data */
+    APP_STATE_FORMAT_DISK,                              /* The app formats the disk */
+    APP_STATE_NVM_Erase,                                   /* The app performs NVM Erase */
+    APP_STATE_NVM_Write,                                    /* The app performs NVM Write */
+    APP_STATE_ERROR,                                         /* An app error has occurred */
             
     /* TODO: Define states used by the application state machine. */
 
 } APP_STATES;
+// *****************************************************************************
+
+
+/* File System types
+ 
+  Summary:
+ Types of file systems - one of the FS type can be mounted in this application.
+
+  Description:
+    This enumeration defines the valid FS types. The value will be compared with the data read from NVM, 
+    while deciding which FS was mounted during earlier app execution.
+*/
+
+typedef enum
+{
+    /* Types of File Systems */
+    LittleFS = 1,
+    FATFS = 2,
+    InvalidFS = 255,
+}LFSwFTP_FStypes;
+
+// *****************************************************************************
+
+/* FTP over LFS service flag for 'LFS mount and format complete' structure.
+
+  Summary:
+  
+  Description:
+ 
+  Remarks:
+   None.
+*/
+
+typedef struct 
+{
+    /* Type of FS mounted in this app, will be stored in the NVM. It will be read from NVM on subsequent resets, to decide whether to format FS again or not */
+    LFSwFTP_FStypes FSused;
+    
+    /*Flag to set if FS was mounted and formatted successfully during earlier app execution*/
+    bool isLFSmountFormatSuccess;
+    
+}SYS_LFSwFTP_CONFIG;
+
+// *****************************************************************************
 
 
 // *****************************************************************************

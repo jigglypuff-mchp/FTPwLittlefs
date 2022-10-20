@@ -125,6 +125,9 @@ extern "C" {
 #define SYS_FS_FILE_NAME_LEN              255
 #define SYS_FS_CWD_STRING_LEN             1024
 
+/*defining NVMADDR to store and retrieve a flag "isLFSmountFormatSuccess and "FSused" */
+#define SYS_LFSwFTP_EXAMP_NVMADDR                       0x900FFFF0
+
 /* File System RTOS Configurations*/
 #define SYS_FS_STACK_SIZE                 1024
 #define SYS_FS_PRIORITY                   1
